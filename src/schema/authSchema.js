@@ -5,4 +5,4 @@ const loginSchema = joi.object({
   password: joi.string().min(6).max(128).required()
 });
 
-module.exports = loginSchema;
+module.exports = { loginSchema };

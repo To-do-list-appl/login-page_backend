@@ -1,12 +1,8 @@
-const joi = require('joi');
-const { auth } = require('./firebase'); // Import Firebase auth
+const { loginUser } = require('./controllers'); // Import login controller
 
 const routes = (app) => {
   app.route('/login')
-    .post((req, res) => {
-      const { username, password } = req.body;
-
-    });
+    .post(loginUser);
 };
 
 module.exports = routes;

@@ -1,11 +1,11 @@
 const express = require('express');
 const port = process.env.PORT || 3000;
 const app = express();
-require('dotenv').config(); // Load environment variables from .env file
-const cors = require('cors');
 const routes = require('./src/routes'); // Import your routes
-const bodyParser = require('body-parser');
-const db = require('./src/firebase'); 
+require('dotenv').config(); // Load environment variables from .env file
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 routes(app); // Initialize routes
 app.get('/', (req, res) => {
   res.send('Hello World!');

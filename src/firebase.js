@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+require('dotenv').config();
 const { initializeApp } = require('firebase/app');
 const { getAuth } = require('firebase/auth');
 const { getFirestore } = require('firebase/firestore'); 
