@@ -1,2 +1,16 @@
 const express = require('express');
-console.log('Balls')
+const port = process.env.PORT || 3000;
+const app = express();
+require('dotenv').config(); // Load environment variables from .env file
+const cors = require('cors');
+const routes = require('./src/routes'); // Import your routes
+const bodyParser = require('body-parser');
+const db = require('./src/firebase'); 
+routes(app); // Initialize routes
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
